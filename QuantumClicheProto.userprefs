@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Respawner.cs">
+    <Files>
+      <File FileName="Assets\Scripts\InputVCR.cs" Line="347" Column="60" />
+      <File FileName="Assets\Sample Assets\2D\Scripts\Platformer2DUserControl.cs" Line="18" Column="17" />
+      <File FileName="Assets\Scripts\Respawner.cs" Line="16" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\Projekty\UnityProjects\QuantumClicheProto\Assets\Scripts\InputVCR.cs" line="343" />
+      <Breakpoint file="D:\Projekty\UnityProjects\QuantumClicheProto\Assets\Scripts\InputVCR.cs" line="329" />
+      <Breakpoint file="D:\Projekty\UnityProjects\QuantumClicheProto\Assets\Scripts\InputVCR.cs" line="332" />
+      <Breakpoint file="D:\Projekty\UnityProjects\QuantumClicheProto\Assets\Scripts\InputVCR.cs" line="335" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
