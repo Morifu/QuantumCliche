@@ -80,6 +80,8 @@ public class InputVCR : MonoBehaviour
 	{
 		get { return _mode; }
 	}
+
+	public bool loop = false;
 	#endregion
 	
 	float nextPosSyncTime = -1f;
@@ -252,7 +254,11 @@ public class InputVCR : MonoBehaviour
 				// end of recording
 				if ( finishedPlayback != null )
 					finishedPlayback( );
-				Stop ();
+
+				if(loop)
+					playbackTime = 0;
+				else
+					Stop ();
 			}
 			else
 			{
