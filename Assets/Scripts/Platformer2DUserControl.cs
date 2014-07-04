@@ -7,15 +7,22 @@ public class Platformer2DUserControl : MonoBehaviour
     private bool jump;
 	InputVCR vcr;
 	bool useVCR = false;
+	bool isPlayer = false;
 
 	void Awake()
 	{
 		character = GetComponent<PlatformerCharacter2D>();
 		vcr = GetComponent<InputVCR>();
 		useVCR = vcr != null;
+	
+		if(useVCR)
+		{
+			if(gameObject.CompareTag("Player"))
+				isPlayer = true;
 
-		if(vcr.mode == InputVCRMode.Record)
-			vcr.Record();
+			if(isPlayer && vcr.mode == InputVCRMode.Record)
+				vcr.Record();
+		}
 	}
 
     void Update ()
@@ -23,6 +30,8 @@ public class Platformer2DUserControl : MonoBehaviour
 
 		if (vcr.GetButtonDown("Jump")) 
 			jump = true;
+
+		if(!isPlayer) return;
 
 		if (Input.GetKey ("r"))
 			vcr.Record ();
