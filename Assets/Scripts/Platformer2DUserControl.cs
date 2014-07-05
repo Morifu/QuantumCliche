@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PlatformerCharacter2D))]
+[RequireComponent(typeof(PlayerController))]
 public class Platformer2DUserControl : MonoBehaviour 
 {
 	private PlatformerCharacter2D character;
     private bool jump;
+	private bool canJump;
 	InputVCR vcr;
 	bool useVCR = false;
 	bool isPlayer = false;
+	bool jumped = true;
+	bool justPressedW = false;
 
 	void Awake()
 	{
@@ -27,9 +30,10 @@ public class Platformer2DUserControl : MonoBehaviour
 
     void Update ()
     {
-
-		if (vcr.GetButtonDown("Jump")) 
-			jump = true;
+		if (vcr.GetKeyDown ("w"))
+			justPressedW = true;
+		if(vcr.GetKeyUp("w"))
+			justPressedW = false;
 
 		if(!isPlayer) return;
 
@@ -48,6 +52,18 @@ public class Platformer2DUserControl : MonoBehaviour
 		// Read the inputs.
 		bool crouch = Input.GetKey(KeyCode.LeftControl);
 		float h = vcr.GetAxis("Horizontal");
+		float v = vcr.GetAxis ("Vertical");
+		if (justPressedW && !jumped)
+		{
+ 			Debug.Log("Jumped!");
+			jump = true;
+			jumped = true;
+		}
+
+		if(jumped && character.canJump() && !justPressedW)
+		{
+			jumped = false;
+		}
 
 		// Pass all parameters to the character control script.
 		character.Move( h, crouch , jump );

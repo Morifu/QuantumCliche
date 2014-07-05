@@ -429,7 +429,14 @@ public class InputVCR : MonoBehaviour
 			return false;
 		
 		if ( _mode == InputVCRMode.Playback && thisFrameInputs.ContainsKey( buttonName ) )
-			return ( !thisFrameInputs[buttonName].buttonState && ( lastFrameInputs == null || !lastFrameInputs.ContainsKey ( buttonName ) || lastFrameInputs[buttonName].buttonState ) );
+		{
+			bool first = !thisFrameInputs[buttonName].buttonState;
+			bool second1 = lastFrameInputs == null;
+			bool second2 = !lastFrameInputs.ContainsKey ( buttonName );
+			bool second3 = lastFrameInputs[buttonName].buttonState;
+			bool second = ( second1 || second2 || second3 );
+			return (first  && second );
+		}
 		else
 			return Input.GetButtonUp ( buttonName );
 	}
