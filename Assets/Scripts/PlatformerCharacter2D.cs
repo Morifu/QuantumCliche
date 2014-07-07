@@ -2,9 +2,9 @@
 
 public class PlatformerCharacter2D : MonoBehaviour 
 {
-	bool facingRight = true;							// For determining which way the player is currently facing.
+	protected bool facingRight = true;							// For determining which way the player is currently facing.
 
-	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
+	[SerializeField] protected float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
 	[SerializeField] protected float jumpForce = 400f;			// Amount of force added when the player jumps.	
 
 	[Range(0, 1)]
@@ -91,7 +91,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 	{
 		return grounded;
 	}
-	
+
+	public void Shoot()
+	{
+	}
+
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.

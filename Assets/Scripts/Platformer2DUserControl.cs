@@ -11,6 +11,8 @@ public class Platformer2DUserControl : MonoBehaviour
 	bool isPlayer = false;
 	bool jumped = true;
 	bool justPressedW = false;
+	[SerializeField] float shootingSpeed = 1.0f;
+	float lastBulletShotAt = 0.0f;
 
 	void Awake()
 	{
@@ -65,6 +67,11 @@ public class Platformer2DUserControl : MonoBehaviour
 			jumped = false;
 		}
 
+		if(vcr.GetButton("Jump") && (Time.time - lastBulletShotAt > shootingSpeed) )
+		{
+			lastBulletShotAt = Time.time;
+			((PlayerController)character).Shoot();
+		}
 		// Pass all parameters to the character control script.
 		character.Move( h, crouch , jump );
 

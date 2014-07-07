@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyController : PlatformerCharacter2D {
 
-	bool stayed = false;
+	bool entered = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,16 +11,20 @@ public class EnemyController : PlatformerCharacter2D {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(!stayed && other.gameObject.CompareTag("Player") )
+		if(!entered && other.gameObject.CompareTag("Player") )
 		{
 			Debug.Log("Touched Player");
-			stayed = true;
+			entered = true;
 		}
-		
+		if(other.gameObject.CompareTag("Bullet"))
+		{
+			Destroy(gameObject);
+			Destroy(other.gameObject);
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		stayed = false;
+		entered = false;
 	}
 }
