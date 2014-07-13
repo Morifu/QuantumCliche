@@ -25,12 +25,12 @@ public class PlayerController : PlatformerCharacter2D {
 			Debug.Log ("Bounce");
 			Bounce();
 			bounced = true;
-			Destroy(other.gameObject);
+			other.gameObject.GetComponent<EnemyController>().killByJump();
 		}
 
 	}
 
-	public void Shoot()
+	public override void Shoot()
 	{
 		GameObject bullet = (GameObject)Instantiate(bulletPrefab,transform.position, new Quaternion(0,0,0,0));
 		bullet.rigidbody2D.velocity = new Vector2((facingRight?1:-1) * bulletSpeed, bullet.rigidbody2D.velocity.y);

@@ -92,7 +92,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		return grounded;
 	}
 
-	public void Shoot()
+	public virtual void Shoot()
 	{
 	}
 

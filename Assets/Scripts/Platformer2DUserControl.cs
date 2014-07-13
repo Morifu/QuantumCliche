@@ -70,7 +70,7 @@ public class Platformer2DUserControl : MonoBehaviour
 		if(vcr.GetButton("Jump") && (Time.time - lastBulletShotAt > shootingSpeed) )
 		{
 			lastBulletShotAt = Time.time;
-			((PlayerController)character).Shoot();
+			character.Shoot();
 		}
 		// Pass all parameters to the character control script.
 		character.Move( h, crouch , jump );
