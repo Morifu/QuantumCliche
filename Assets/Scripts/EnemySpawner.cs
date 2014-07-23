@@ -16,9 +16,9 @@ public class EnemySpawner : MonoBehaviour {
 		InputVCR vcr = enemy.GetComponent<InputVCR> ();
 		if (vcr != null)
 		{
-			vcr.loop = true;
 			Recording toplay = new Recording(playerRecording);
-			vcr.Play(toplay, Random.Range(0,toplay.recordingLength));
+			bool isBackwards = (Random.Range(0,2) == 1)?true:false;
+			vcr.Play(toplay, Random.Range(0,toplay.recordingLength), true,isBackwards);
 		}
 
 	}

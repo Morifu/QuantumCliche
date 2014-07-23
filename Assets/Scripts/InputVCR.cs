@@ -81,9 +81,9 @@ public class InputVCR : MonoBehaviour
 		get { return _mode; }
 	}
 
-	public bool loop = false;
 	#endregion
-	
+	bool loop = false;
+	bool backwards = false;
 	float nextPosSyncTime = -1f;
 	float realRecordingTime;
 	
@@ -163,8 +163,10 @@ public class InputVCR : MonoBehaviour
 	/// <param name='startRecordingFromTime'>
 	/// OPTIONAL: Time to start recording at
 	/// </param>
-	public void Play( Recording recording, float startRecordingFromTime = 0 )
+	public void Play( Recording recording, float startRecordingFromTime = 0 , bool loopRecording = false, bool backwardLoop = false)
 	{	
+		loop = loopRecording;
+		backwards = backwardLoop;
 		currentRecording = recording;
 		currentFrame = recording.GetClosestFrame ( startRecordingFromTime );
 		
@@ -249,14 +251,19 @@ public class InputVCR : MonoBehaviour
 			int lastFrame = currentFrame;
 			currentFrame = currentRecording.GetClosestFrame ( playbackTime );
 			
-			if ( currentFrame > currentRecording.totalFrames )
+			if ( currentFrame > currentRecording.totalFrames || playbackTime < 0 )
 			{
 				// end of recording
 				if ( finishedPlayback != null )
 					finishedPlayback( );
 
 				if(loop)
-					playbackTime = 0;
+				{
+					if(backwards)
+						playbackTime = currentRecording.recordingLength;
+					else
+						playbackTime = 0;
+				}
 				else
 					Stop ();
 			}
@@ -264,7 +271,7 @@ public class InputVCR : MonoBehaviour
 			{
 				// go through all changes in recorded input since last frame
 				var changedInputs = new Dictionary<string, Recording.InputInfo>();
-				for( int frame = lastFrame + 1; frame <= currentFrame; frame++ )
+				for( int frame = lastFrame + (backwards?(-1):1); frame <= currentFrame; frame++ )
                 {
 					foreach( var input in currentRecording.GetInputs ( frame ) )
 					{
@@ -299,8 +306,8 @@ public class InputVCR : MonoBehaviour
 					else
 						thisFrameInputs.Add ( changedInput.Key, changedInput.Value );
 				}
-				
-				playbackTime += Time.deltaTime;
+
+				playbackTime += (backwards?(-1):1)* Time.deltaTime;
 			}
 		}
 		else if ( _mode == InputVCRMode.Record )
@@ -521,7 +528,7 @@ public class InputVCR : MonoBehaviour
 	
 	public static string Vector3ToString( Vector3 vec )
 	{
-		return vec.x.ToString () + "," + vec.y + "," + vec.z;
+		return vec.x + "," + vec.y + "," + vec.z;
 	}
 	
 	public static Vector3 ParseVector3( string vectorString )
