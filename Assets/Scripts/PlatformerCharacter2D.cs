@@ -16,9 +16,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 	protected Transform groundCheck;								// A position marking where to check if the player is grounded.
 	protected float groundedRadius = .2f;							// Radius of the overlap circle to determine if grounded
 	protected bool grounded = false;								// Whether or not the player is grounded.
+	protected bool crouched = false;
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 	Animator anim;										// Reference to the player's animator component.
+
+	protected Collider2D platform;
 
 	bool doubleJump = false;
 
@@ -34,8 +37,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	void FixedUpdate()
 	{
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-
+		grounded = Physics2D.Raycast(groundCheck.position, -Vector2.up,1f, whatIsGround);
+		Debug.DrawRay (groundCheck.position, Vector3.down);
 		anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation
@@ -43,22 +46,26 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		if(grounded)
 			doubleJump = false;
+
+		CheckCollisions ();
 	}
 
-
+	protected virtual void CheckCollisions()
+	{
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
 
 
 		// If crouching, check to see if the character can stand up
-		if(!crouch && anim.GetBool("Crouch"))
-		{
-			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-				crouch = true;
-		}
-
+//		if(!crouch && anim.GetBool("Crouch"))
+//		{
+//			// If the character has a ceiling preventing them from standing up, keep them crouching
+//			if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
+//				crouch = true;
+//		}
+		crouched = crouch;
 		// Set whether or not the character is crouching in the animator
 		anim.SetBool("Crouch", crouch);
 
@@ -99,7 +106,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	}
 	public bool canJump()
 	{
-		return grounded;
+		return grounded || !doubleJump;
 	}
 
 	public virtual void Shoot()

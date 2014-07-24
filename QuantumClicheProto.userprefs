@@ -1,15 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Platformer2DUserControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlatformerCharacter2D.cs">
     <Files>
       <File FileName="Assets\Scripts\BulletController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlatformerCharacter2D.cs" Line="84" Column="12" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platformer2DUserControl.cs" Line="45" Column="24" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\PlatformerCharacter2D.cs" Line="107" Column="23" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="55" Column="5" />
+      <File FileName="Assets\Scripts\Platformer2DUserControl.cs" Line="51" Column="2" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\NextRound.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\InputVCR.cs" Line="263" Column="55" />
-      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="21" Column="77" />
+      <File FileName="Assets\Scripts\InputVCR.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CheckDeath.cs" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
