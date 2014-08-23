@@ -1,0 +1,15 @@
+body_aim_backwards_ss - 370 x 185
+body_aim_down_ss - 147 x 280
+body_aim_forward_ss - 280 - 175
+body_aim_up_ss - 161 x 294
+body_block_ss - 287 x 392
+body_idle_ss - 238 x 210
+body_shoot_backward_ss - 504 x 189
+body_shoot_down_ss - 175 x 406
+body_shoot_forward_ss - 420 x 175
+body_shoot_up_ss - 196 x 420
+jump_down_ledge_ss - 259 x 399
+legs_idle_ss - 147 x 112
+legs_jump_forward_ss - 245 x 147
+legs_jump_up_ss - 147 x 175
+legs_run_ss - 196 x 140 

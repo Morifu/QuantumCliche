@@ -44,6 +44,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		// Set the vertical animation
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 
+
 		if(grounded)
 			doubleJump = false;
 

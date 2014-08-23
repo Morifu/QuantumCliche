@@ -67,7 +67,7 @@ public class Platformer2DUserControl : MonoBehaviour
 			jumped = false;
 		}
 
-		if(vcr.GetButton("Jump") && (Time.time - lastBulletShotAt > shootingSpeed) )
+		if(vcr.GetMouseButton(0) && (Time.time - lastBulletShotAt > shootingSpeed) )
 		{
 			lastBulletShotAt = Time.time;
 			character.Shoot();
