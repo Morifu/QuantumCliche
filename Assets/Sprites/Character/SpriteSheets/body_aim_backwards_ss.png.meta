@@ -57,8 +57,8 @@ TextureImporter:
         y: 185
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: body_aim_backwards_ss_1
       rect:
@@ -67,8 +67,8 @@ TextureImporter:
         y: 185
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: body_aim_backwards_ss_2
       rect:
@@ -77,8 +77,8 @@ TextureImporter:
         y: 185
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: body_aim_backwards_ss_3
       rect:
@@ -87,8 +87,8 @@ TextureImporter:
         y: 0
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: body_aim_backwards_ss_4
       rect:
@@ -97,8 +97,8 @@ TextureImporter:
         y: 0
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: body_aim_backwards_ss_5
       rect:
@@ -107,8 +107,8 @@ TextureImporter:
         y: 0
         width: 370
         height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .699999988, y: .0680000037}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: Character
   userData: 

@@ -19,7 +19,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	protected bool crouched = false;
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
-	Animator anim;										// Reference to the player's animator component.
+	protected Animator anim;										// Reference to the player's animator component.
+	public Transform bodyTransform;
 
 	protected Collider2D platform;
 
@@ -44,6 +45,50 @@ public class PlatformerCharacter2D : MonoBehaviour
 		// Set the vertical animation
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 
+
+		Vector3 mousePos = Input.mousePosition;
+		mousePos.z = -10;
+		
+		Vector3 objectpos = Camera.main.WorldToScreenPoint(bodyTransform.position);
+		mousePos.x = mousePos.x - objectpos.x;
+		mousePos.y = mousePos.y - objectpos.y;
+
+		float angle = Mathf.Atan2 (mousePos.x, mousePos.y) * Mathf.Rad2Deg;
+
+		Debug.Log (angle);
+
+		if(angle > -45 && angle <= 45)
+		{
+			anim.SetBool("Up",true);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+
+		}
+		else if (angle > 45 && angle <= 135)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",!facingRight);
+			anim.SetBool("Right",facingRight);
+			anim.SetBool("Down",false);
+
+		}
+		else if (angle > 135 || angle <= -135)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",true);
+
+		}
+		else if (angle > -135 && angle <= -45)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",facingRight);
+			anim.SetBool("Right",!facingRight);
+			anim.SetBool("Down",false);
+
+		}
 
 		if(grounded)
 			doubleJump = false;
@@ -91,6 +136,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 				// ... flip the player.
 				Flip();
 		}
+		if (grounded && crouch)
+						rigidbody2D.velocity = Vector2.zero;
 
         // If the player should jump...
         if ((grounded || !doubleJump) && jump) {

@@ -57,8 +57,8 @@ TextureImporter:
         y: 112
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_1
       rect:
@@ -67,8 +67,8 @@ TextureImporter:
         y: 112
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_2
       rect:
@@ -77,8 +77,8 @@ TextureImporter:
         y: 112
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_3
       rect:
@@ -87,8 +87,8 @@ TextureImporter:
         y: 0
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_4
       rect:
@@ -97,8 +97,8 @@ TextureImporter:
         y: 0
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_5
       rect:
@@ -107,8 +107,8 @@ TextureImporter:
         y: 0
         width: 147
         height: 112
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: Character
   userData: 

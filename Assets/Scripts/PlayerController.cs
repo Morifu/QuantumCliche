@@ -56,19 +56,20 @@ public class PlayerController : PlatformerCharacter2D {
 
 	protected override void CheckCollisions()
 	{
-		bool shouldignore = crouched || !grounded || (rigidbody2D.velocity.y > 0);
-		
-		Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Ignore"), 
-		                               LayerMask.NameToLayer("Ground"), 
-		                               shouldignore  
-		                               );
-		Physics2D.IgnoreCollision (transform.collider2D, platform,crouched&&grounded);
+//		bool shouldignore = crouched || !grounded || (rigidbody2D.velocity.y > 0);
+//		
+//		Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Ignore"), 
+//		                               LayerMask.NameToLayer("Ground"), 
+//		                               shouldignore  
+//		                               );
+//		Physics2D.IgnoreCollision (transform.collider2D, platform,crouched&&grounded);
 	}
 
 	public override void Shoot()
 	{
 		GameObject bullet = (GameObject)Instantiate(bulletPrefab,transform.position, new Quaternion(0,0,0,0));
 		bullet.rigidbody2D.velocity = new Vector2((facingRight?1:-1) * bulletSpeed, bullet.rigidbody2D.velocity.y);
+		anim.SetTrigger ("Shoot");
 	}
 	
 	void Bounce()

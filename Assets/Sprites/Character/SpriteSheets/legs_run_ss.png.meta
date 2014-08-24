@@ -57,8 +57,8 @@ TextureImporter:
         y: 140
         width: 196
         height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_run_ss_1
       rect:
@@ -66,9 +66,9 @@ TextureImporter:
         x: 196
         y: 140
         width: 196
-        height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        height: 133
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_run_ss_2
       rect:
@@ -77,8 +77,8 @@ TextureImporter:
         y: 140
         width: 196
         height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_run_ss_3
       rect:
@@ -87,8 +87,8 @@ TextureImporter:
         y: 0
         width: 196
         height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_run_ss_4
       rect:
@@ -97,8 +97,8 @@ TextureImporter:
         y: 0
         width: 196
         height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_run_ss_5
       rect:
@@ -107,8 +107,8 @@ TextureImporter:
         y: 0
         width: 196
         height: 140
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: Character
   userData: 
