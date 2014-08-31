@@ -210,7 +210,7 @@ Transition:
     m_ExitTime: 1
   m_Atomic: 0
   m_Solo: 0
-  m_Mute: 1
+  m_Mute: 0
   m_CanTransitionToSelf: 0
 --- !u!1101 &110102495
 Transition:
@@ -562,7 +562,7 @@ Transition:
     m_ExitTime: .583333373
   m_Atomic: 0
   m_Solo: 0
-  m_Mute: 1
+  m_Mute: 0
   m_CanTransitionToSelf: 0
 --- !u!1101 &110157130
 Transition:
@@ -1157,43 +1157,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110240508}
-      second:
-      - {fileID: 110165048}
-    data:
-      first: {fileID: 110218481}
-      second:
-      - {fileID: 110197706}
-    data:
-      first: {fileID: 110252489}
-      second:
-      - {fileID: 110111445}
-    data:
-      first: {fileID: 110243301}
-      second:
-      - {fileID: 110148174}
-    data:
-      first: {fileID: 110293456}
-      second:
-      - {fileID: 110191551}
-      - {fileID: 110189246}
-      - {fileID: 110186018}
-      - {fileID: 110156932}
-    data:
-      first: {fileID: 110264449}
-      second:
-      - {fileID: 110126050}
-      - {fileID: 110152059}
-      - {fileID: 110182858}
-      - {fileID: 110190904}
-    data:
-      first: {fileID: 110210533}
-      second:
-      - {fileID: 110167237}
-      - {fileID: 110161034}
-      - {fileID: 110162745}
-      - {fileID: 110120407}
-    data:
       first: {fileID: 0}
       second: []
     data:
@@ -1215,6 +1178,43 @@ StateMachine:
       - {fileID: 110153199}
       - {fileID: 110142974}
       - {fileID: 110133836}
+    data:
+      first: {fileID: 110210533}
+      second:
+      - {fileID: 110167237}
+      - {fileID: 110161034}
+      - {fileID: 110162745}
+      - {fileID: 110120407}
+    data:
+      first: {fileID: 110264449}
+      second:
+      - {fileID: 110126050}
+      - {fileID: 110152059}
+      - {fileID: 110182858}
+      - {fileID: 110190904}
+    data:
+      first: {fileID: 110293456}
+      second:
+      - {fileID: 110191551}
+      - {fileID: 110189246}
+      - {fileID: 110186018}
+      - {fileID: 110156932}
+    data:
+      first: {fileID: 110243301}
+      second:
+      - {fileID: 110148174}
+    data:
+      first: {fileID: 110252489}
+      second:
+      - {fileID: 110111445}
+    data:
+      first: {fileID: 110218481}
+      second:
+      - {fileID: 110197706}
+    data:
+      first: {fileID: 110240508}
+      second:
+      - {fileID: 110165048}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 144, y: -168, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -1240,14 +1240,14 @@ StateMachine:
       - {fileID: 110136232}
       - {fileID: 110137465}
     data:
-      first: {fileID: 110267068}
-      second:
-      - {fileID: 110100000}
-    data:
       first: {fileID: 110252895}
       second:
       - {fileID: 110102291}
       - {fileID: 110156942}
+    data:
+      first: {fileID: 110267068}
+      second:
+      - {fileID: 110100000}
     data:
       first: {fileID: 110245465}
       second:

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class Platformer2DUserControl : MonoBehaviour 
 {
 	private PlatformerCharacter2D character;
