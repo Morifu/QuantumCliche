@@ -14,10 +14,15 @@ public class NextRound : MonoBehaviour {
 	{
 		if(other.gameObject.CompareTag("Player"))
 		{
-			other.gameObject.transform.position = Vector3.zero;
-			other.gameObject.GetComponent<InputVCR>().Stop();
-			spawner.SpawnEnemy(other.gameObject.GetComponent<InputVCR>().GetRecording());
-			other.gameObject.GetComponent<InputVCR>().NewRecording();
+			InputVCR vcr = other.gameObject.GetComponent<InputVCR>();
+			if(vcr != null)
+			{
+				other.gameObject.transform.position = Vector3.zero;
+				vcr.Stop();
+				spawner.SpawnEnemy(vcr.GetRecording());
+				vcr.NewRecording();
+			}
+		
 		}
 	}
 }

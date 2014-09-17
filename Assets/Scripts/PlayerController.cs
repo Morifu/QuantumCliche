@@ -3,11 +3,15 @@ using System.Collections;
 
 public class PlayerController : PlatformerCharacter2D {
 
+	
+	public Transform bodyTransform;
+
 	bool jumpedOnEnemy = false;
 	bool bounced = false;
 	[SerializeField] LayerMask whoIsEnemy;	
 	[SerializeField] GameObject bulletPrefab;
 	[SerializeField] float bulletSpeed = 15.0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,9 +29,15 @@ public class PlayerController : PlatformerCharacter2D {
 			Debug.Log ("Bounce");
 			Bounce();
 			bounced = true;
-			other.gameObject.GetComponent<EnemyController>().killByJump();
+			EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+			if(enemy != null)
+				enemy.killByJump();
 		}
 
+		if(other.CompareTag("Collectible"))
+		{
+			GameObject.Destroy(other.gameObject);
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -53,6 +63,53 @@ public class PlayerController : PlatformerCharacter2D {
 //	{
 //		Debug.Log ("Exit of :" + other.tag);
 //	}
+
+	protected override void PointAtMouse()
+	{
+		Vector3 mousePos = Input.mousePosition;
+		mousePos.z = -10;
+		
+		Vector3 objectpos = Camera.main.WorldToScreenPoint(bodyTransform.position);
+		mousePos.x = mousePos.x - objectpos.x;
+		mousePos.y = mousePos.y - objectpos.y;
+		
+		float angle = Mathf.Atan2 (mousePos.x, mousePos.y) * Mathf.Rad2Deg;
+		
+		Debug.Log (angle);
+		
+		if(angle > -45 && angle <= 45)
+		{
+			anim.SetBool("Up",true);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+			
+		}
+		else if (angle > 45 && angle <= 135)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",!facingRight);
+			anim.SetBool("Right",facingRight);
+			anim.SetBool("Down",false);
+			
+		}
+		else if (angle > 135 || angle <= -135)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",true);
+			
+		}
+		else if (angle > -135 && angle <= -45)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",facingRight);
+			anim.SetBool("Right",!facingRight);
+			anim.SetBool("Down",false);
+			
+		}
+	}
 
 	protected override void CheckCollisions()
 	{
