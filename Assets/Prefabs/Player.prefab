@@ -204,7 +204,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .256054699
-  m_Center: {x: 0, y: -.300000012}
+  m_Center: {x: 0, y: -.409999996}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -277,6 +277,7 @@ MonoBehaviour:
   armorBar:
   - {fileID: 0}
   - {fileID: 0}
+  time: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,7 +343,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   bulletPrefab: {fileID: 100000, guid: 235712d7d7a75594497e54fd8570614b, type: 2}
-  bulletSpeed: 15
+  bulletSpeed: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

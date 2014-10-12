@@ -231,6 +231,8 @@ GameObject:
   - 124: {fileID: 319654614}
   - 81: {fileID: 319654613}
   - 114: {fileID: 319654618}
+  - 131: {fileID: 319654619}
+  - 114: {fileID: 319654620}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -267,7 +269,7 @@ Camera:
   m_GameObject: {fileID: 319654612}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 1, g: 1, b: 1, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -283,7 +285,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967263
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -320,6 +322,38 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0
   lookAheadMoveThreshold: 0
   background: {fileID: 1012619878}
+--- !u!131 &319654619
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 319654612}
+  m_Enabled: 1
+  m_Texture: {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 800
+    height: 600
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!114 &319654620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 319654612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53e9e65e6ec1d043a9ab94538c4bfe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 1.5
+  followCamera: 1
 --- !u!1 &325377282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,13 +2438,13 @@ Canvas:
   m_GameObject: {fileID: 1810703666}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 319654616}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 4120926597
   m_SortingOrder: 0
 --- !u!1 &1897802278
 GameObject:

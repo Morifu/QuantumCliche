@@ -54,29 +54,29 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 147
-        height: 112
+        y: 130
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_1
       rect:
         serializedVersion: 2
-        x: 147
-        y: 112
-        width: 147
-        height: 112
+        x: 137
+        y: 130
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_2
       rect:
         serializedVersion: 2
-        x: 294
-        y: 112
-        width: 147
-        height: 112
+        x: 274
+        y: 130
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -85,28 +85,28 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 147
-        height: 112
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_4
       rect:
         serializedVersion: 2
-        x: 147
+        x: 137
         y: 0
-        width: 147
-        height: 112
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: legs_idle_ss_5
       rect:
         serializedVersion: 2
-        x: 294
+        x: 274
         y: 0
-        width: 147
-        height: 112
+        width: 137
+        height: 130
       alignment: 9
       pivot: {x: .439999998, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}

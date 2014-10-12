@@ -13,6 +13,17 @@ public class PlayerController : PlatformerCharacter2D {
 	[SerializeField] float bulletSpeed = 15.0f;
 
 
+	enum Direction : int 
+	{
+		Left,
+		Up,
+		Right,
+		Down,
+		Undefined
+	}
+
+	Direction currentDirection = Direction.Undefined;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -83,7 +94,7 @@ public class PlayerController : PlatformerCharacter2D {
 			anim.SetBool("Left",false);
 			anim.SetBool("Right",false);
 			anim.SetBool("Down",false);
-			
+			currentDirection = Direction.Up;
 		}
 		else if (angle > 45 && angle <= 135)
 		{
@@ -91,7 +102,7 @@ public class PlayerController : PlatformerCharacter2D {
 			anim.SetBool("Left",!facingRight);
 			anim.SetBool("Right",facingRight);
 			anim.SetBool("Down",false);
-			
+			currentDirection = Direction.Right;
 		}
 		else if (angle > 135 || angle <= -135)
 		{
@@ -99,7 +110,7 @@ public class PlayerController : PlatformerCharacter2D {
 			anim.SetBool("Left",false);
 			anim.SetBool("Right",false);
 			anim.SetBool("Down",true);
-			
+			currentDirection = Direction.Down;
 		}
 		else if (angle > -135 && angle <= -45)
 		{
@@ -107,7 +118,7 @@ public class PlayerController : PlatformerCharacter2D {
 			anim.SetBool("Left",facingRight);
 			anim.SetBool("Right",!facingRight);
 			anim.SetBool("Down",false);
-			
+			currentDirection = Direction.Left;
 		}
 	}
 
@@ -125,7 +136,28 @@ public class PlayerController : PlatformerCharacter2D {
 	public override void Shoot()
 	{
 		GameObject bullet = (GameObject)Instantiate(bulletPrefab,transform.position, new Quaternion(0,0,0,0));
-		bullet.rigidbody2D.velocity = new Vector2((facingRight?1:-1) * bulletSpeed, bullet.rigidbody2D.velocity.y);
+
+		Vector2 direction = Vector2.zero;
+		switch(currentDirection)
+		{
+		case Direction.Down:
+			direction = -Vector2.up;
+			bullet.transform.Rotate(0f,0f,90.0f);
+			break;
+		case Direction.Left:
+			direction = -Vector2.right;
+			break;
+		case Direction.Right:
+			direction = Vector2.right;
+			break;
+		case Direction.Up:
+			direction = Vector2.up;
+			bullet.transform.Rotate(0f,0f,-90.0f);
+			break;
+		default:
+			break;
+		}
+		bullet.rigidbody2D.velocity = direction * bulletSpeed;
 		anim.SetTrigger ("Shoot");
 	}
 	
