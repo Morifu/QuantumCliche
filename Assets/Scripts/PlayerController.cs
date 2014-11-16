@@ -5,6 +5,7 @@ public class PlayerController : PlatformerCharacter2D {
 
 	
 	public Transform bodyTransform;
+	public Transform gunPoint;
 
 	bool jumpedOnEnemy = false;
 	bool bounced = false;
@@ -19,6 +20,10 @@ public class PlayerController : PlatformerCharacter2D {
 		Up,
 		Right,
 		Down,
+		NE,
+		NW,
+		SE,
+		SW,
 		Undefined
 	}
 
@@ -88,54 +93,118 @@ public class PlayerController : PlatformerCharacter2D {
 		
 		Debug.Log (angle);
 		
-		if(angle > -45 && angle <= 45)
+		if(angle > -22.5f && angle <= 22.5f)
 		{
 			anim.SetBool("Up",true);
 			anim.SetBool("Left",false);
 			anim.SetBool("Right",false);
 			anim.SetBool("Down",false);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
 			currentDirection = Direction.Up;
 		}
-		else if (angle > 45 && angle <= 135)
+		else if(angle > 22.5f && angle <= 67.5f)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+			anim.SetBool("NE",facingRight);
+			anim.SetBool("NW",!facingRight);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
+			currentDirection = Direction.NE;
+		}
+		else if(angle > 67.5f && angle <= 112.5f)
 		{
 			anim.SetBool("Up",false);
 			anim.SetBool("Left",!facingRight);
 			anim.SetBool("Right",facingRight);
 			anim.SetBool("Down",false);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
 			currentDirection = Direction.Right;
 		}
-		else if (angle > 135 || angle <= -135)
+		else if(angle > 112.5f && angle <= 157.5f)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",!facingRight);
+			anim.SetBool("SE",facingRight);
+			currentDirection = Direction.SE;
+		}
+		else if(angle > 157.5f || angle <= -157.5f)
 		{
 			anim.SetBool("Up",false);
 			anim.SetBool("Left",false);
 			anim.SetBool("Right",false);
 			anim.SetBool("Down",true);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
 			currentDirection = Direction.Down;
 		}
-		else if (angle > -135 && angle <= -45)
+		else if (angle > -157.5f && angle <= -112.5f)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",facingRight);
+			anim.SetBool("SE",!facingRight);
+			currentDirection = Direction.SW;
+		}
+		else if (angle > -112.5f && angle <= -67.5f)
 		{
 			anim.SetBool("Up",false);
 			anim.SetBool("Left",facingRight);
 			anim.SetBool("Right",!facingRight);
 			anim.SetBool("Down",false);
+			anim.SetBool("NE",false);
+			anim.SetBool("NW",false);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
 			currentDirection = Direction.Left;
+		}
+		else if (angle > -67.5f && angle <= -25.5f)
+		{
+			anim.SetBool("Up",false);
+			anim.SetBool("Left",false);
+			anim.SetBool("Right",false);
+			anim.SetBool("Down",false);
+			anim.SetBool("NE",!facingRight);
+			anim.SetBool("NW",facingRight);
+			anim.SetBool("SW",false);
+			anim.SetBool("SE",false);
+			currentDirection = Direction.NW;
 		}
 	}
 
 	protected override void CheckCollisions()
 	{
-//		bool shouldignore = crouched || !grounded || (rigidbody2D.velocity.y > 0);
-//		
-//		Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Ignore"), 
-//		                               LayerMask.NameToLayer("Ground"), 
-//		                               shouldignore  
-//		                               );
-//		Physics2D.IgnoreCollision (transform.collider2D, platform,crouched&&grounded);
+		bool shouldignore = crouched || !grounded || (rigidbody2D.velocity.y > 0);
+		
+		Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Ignore"), 
+		                               LayerMask.NameToLayer("Ground"), 
+		                               shouldignore  
+		                               );
+		Physics2D.IgnoreCollision (transform.collider2D, platform,crouched&&grounded);
 	}
 
 	public override void Shoot()
 	{
-		GameObject bullet = (GameObject)Instantiate(bulletPrefab,transform.position, new Quaternion(0,0,0,0));
+		GameObject bullet = (GameObject)Instantiate(bulletPrefab,gunPoint.position, new Quaternion(0,0,0,0));
 
 		Vector2 direction = Vector2.zero;
 		switch(currentDirection)
@@ -153,6 +222,22 @@ public class PlayerController : PlatformerCharacter2D {
 		case Direction.Up:
 			direction = Vector2.up;
 			bullet.transform.Rotate(0f,0f,-90.0f);
+			break;
+		case Direction.NE:
+			direction = new Vector2(1f,1f);
+			bullet.transform.Rotate(0f,0f,45.0f);
+			break;
+		case Direction.SE:
+			direction = new Vector2(1f,-1f);
+			bullet.transform.Rotate(0f,0f,-45.0f);
+			break;
+		case Direction.SW:
+			direction = new Vector2(-1f,-1f);
+			bullet.transform.Rotate(0f,0f,45.0f);
+			break;
+		case Direction.NW:
+			direction = new Vector2(-1f,1f);
+			bullet.transform.Rotate(0f,0f,-45.0f);
 			break;
 		default:
 			break;

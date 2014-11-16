@@ -13,3 +13,17 @@ legs_idle_ss - 147 x 112
 legs_jump_forward_ss - 245 x 147
 legs_jump_up_ss - 147 x 175
 legs_run_ss - 196 x 140 
+legs_standing_ss - 137 x 130
+coin_atom_ss - 140 x 147
+
+dodane 2014.11.12
+
+body_aiming_back_up_ss - 294 x 252
+body_aiming_back_down_ss - 329 x 217
+body_aiming_forward_down_ss - 252 x 196
+body_aiming_forward_up_ss - 210 x 224
+body_shooting_back_down_ss - 441 x 329
+body_shooting_back_up_ss - 413 x 357
+body_shooting_forward_down_ss - 357 x 315
+body_shooting_forward_up_ss - 329 x 322
+bullet_ss - 105 x 42

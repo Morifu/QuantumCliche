@@ -51,7 +51,7 @@ public class Platformer2DUserControl : MonoBehaviour
 	void FixedUpdate()
 	{
 		// Read the inputs.
-		bool crouch = Input.GetKey(KeyCode.LeftControl);
+		bool crouch = Input.GetKey(KeyCode.C);
 		float h = vcr.GetAxis("Horizontal");
 		float v = vcr.GetAxis ("Vertical");
 		if (justPressedW && !jumped)

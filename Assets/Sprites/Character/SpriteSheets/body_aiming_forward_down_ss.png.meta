@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: f57165b30a64041449d47f2c91c06434
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: body_aiming_forward_down_ss_0
+    21300002: body_aiming_forward_down_ss_1
+    21300004: body_aiming_forward_down_ss_2
+    21300006: body_aiming_forward_down_ss_3
+    21300008: body_aiming_forward_down_ss_4
+    21300010: body_aiming_forward_down_ss_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: body_aiming_forward_down_ss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .375824004, y: .185544848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_aiming_forward_down_ss_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 196
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .372467875, y: .14670983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_aiming_forward_down_ss_2
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 196
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .375823975, y: .185544848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_aiming_forward_down_ss_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .375824004, y: .194174811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_aiming_forward_down_ss_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .375824094, y: .18122983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_aiming_forward_down_ss_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 252
+        height: 196
+      alignment: 9
+      pivot: {x: .375823975, y: .194174811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Character
+  userData: 
